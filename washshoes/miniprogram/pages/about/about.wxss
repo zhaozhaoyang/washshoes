@@ -1,0 +1,19 @@
+/* pages/about/about.wxss */
+@import "../../wxParse/wxParse.wxss";
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+.txt{
+  width: 90%;
+  margin: 0 auto;
+  color: #505050FF;
+  font-size: 28rpx;
+  line-height: 44rpx;
+  font-weight: 400;
+}
+.btn{
+  width: 562rpx;
+  height: 88rpx;
+  margin: 200rpx auto;
+}

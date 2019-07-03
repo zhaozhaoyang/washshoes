@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-icon": "../../dist/icon/index",
+    "van-button": "../../dist/button/index",
+    "van-radio": "../../dist/radio/index",
+    "van-radio-group": "../../dist/radio-group/index",
+    "van-popup": "../../dist/popup/index"
+  },
+  "navigationBarTitleText": "在线付款"
+}

@@ -1,0 +1,39 @@
+<!--pages/address/address.wxml-->
+<view class='container'>
+  <!--  弹窗确认-->
+  <!-- <van-popup show="{{ show }}" bind:close="onClose"> -->
+    <!-- <view class='conf'> -->
+      <van-dialog id="van-dialog" show="{{ show }}" bind:close="onClose"/>
+    <!-- </view> -->
+  <!-- </van-popup> -->
+  <!-- 地址列表 -->
+  <van-radio-group value="{{ radio }}" bind:change="onChange" >
+    <view class='item' wx:for="{{list1}}" wx:key="index" data-id="{{item.addressid}}" data-index='{{index}}' bindtap='selected'>
+      <view class='name'>
+        <text class='t1'>{{item.name}}</text>
+        <text>{{item.phone}}</text>
+      </view>
+      <view class='adr'>
+        <text wx:if="{{item.isdefault==1}}" class="isdefault">【默认】</text>{{item.address}} {{item.addressdetail}}
+      </view>
+      <view class='default'>
+      <view class="button">
+          <button class='edit btn' data-id="{{item.addressid}}" catchtap="onEdit" data-isdefault="{{item.isdefault}}" data-name='{{item.name}}' data-phone="{{item.phone}}" data-address="{{item.address}}" data-addressdetail="{{item.addressdetail}}">编辑
+          </button>
+          <button class='del btn' catchtap='onDel' data-id="{{item.addressid}}">删除</button>
+        </view>
+        <van-radio name="{{item.addressid}}" data-index='{{index}}' data-id="{{item.addressid}}" catchtap="onClick" checked-color="#07c160" isdefault="{{item.isdefault}}" wx:if="{{item.isdefault==0}}" >
+          设为默认
+        </van-radio>
+        
+      </view>
+    </view>
+
+  </van-radio-group>
+  <view class='more' bindtap='more' wx:if="{{list1.length>=3}}">查看全部</view>
+  <view wx:if="{{!list1}}">暂无</view>
+  <view class='add'>
+    <button type='primary' bindtap='add'>新增地址</button>
+  </view>
+
+</view>

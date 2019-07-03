@@ -1,0 +1,70 @@
+/* pages/choose/choose.wxss */
+
+page {
+  height: 100%;
+}
+
+.container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  border-top: 1px solid #f8f8f8;
+}
+
+.tit {
+  height: 75rpx;
+  line-height: 75rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tit .lt {
+  font-size: 30rpx;
+  font-weight: 500;
+}
+
+.tit .rt {
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.tit .rt image {
+  display: inline-block;
+  padding-left: 10rpx;
+  width: 24rpx;
+  height: 14rpx;
+}
+
+.itm {
+  width: 100%;
+  height: 155rpx;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.name {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  font-weight: 500;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.adr {
+  font-size: 26rpx;
+  font-weight: 400;
+  width: 574rpx;
+}
+
+.picker {
+  /* width: 100%;
+  height: 100%; */
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+}

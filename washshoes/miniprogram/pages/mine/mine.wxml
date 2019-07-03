@@ -1,0 +1,45 @@
+<!--pages/mine/mine.wxml-->
+<view class='container'>
+  <view class='tab'>
+    <van-tabs>
+      <van-tab title="用户">
+        <view class='items' wx:if="{{list}}">
+          <view class='item' wx:for="{{list}}" wx:key="index" data-id="{{item.userid}}">
+            <image src='{{item.usericon}}'></image>
+            {{item.username}}
+          </view>
+        </view>
+        <view wx:if="{{!list}}" class='noth nocoupon'>
+          <image src='../../images/send.png'></image>
+          <view>暂无推广信息</view>
+        </view>
+      </van-tab>
+      <van-tab title="收入">
+        <view class='coupon' wx:if="{{list1}}">
+          <view class='itm' wx:for="{{list1}}" wx:key="index" data-id="{{item.mycouponid}}">
+            <view class='info'>
+              <view class='top'>
+                <view class='ico'>￥</view>
+                <view class='big'>{{item.price}}</view>
+                <view class='rt'>
+                  <view class='view'>优惠券</view>
+                  <view class='text'>满{{item.fullprice}}元可用</view>
+                </view>
+              </view>
+              <view class='bottom'>
+                有效日期：自领取日{{item.fullprice}}日之内有效
+              </view>
+            </view>
+            <view class='tap'>
+              立即领取
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{!list1}}" class='noth nocoupon'>
+          <image src='../../images/send.png'></image>
+          <view>暂无收入信息</view>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

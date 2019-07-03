@@ -1,0 +1,27 @@
+<!--pages/coupon/coupon.wxml-->
+<view class='container'>
+  <view wx:if="{{list}}" class='itm' wx:for="{{list}}" wx:key="index">
+    <view class='info'>
+
+      <view class='top'>
+        <view class='ico'>￥</view>
+        <view class='big'>{{item.price}}</view>
+        <view class='rt'>
+          <view class='view'>优惠券</view>
+          <view class='text'>满{{item.fullprice}}元可用</view>
+        </view>
+      </view>
+      <view class='bottom'>
+        有效日期：自领取日{{item.daynum}}日之内有效
+      </view>
+    </view>
+
+    <view class='tap' bindtap="getCou" data-id="{{item.couponid}}" data-index='{{index}}'>
+      立即领取
+    </view>
+  </view>
+  <view wx:if="{{!list}}" class='noth nocoupon'>
+      <image src='../../images/coupon.png'></image>
+      <view>暂无优惠券</view>
+  </view>
+</view>

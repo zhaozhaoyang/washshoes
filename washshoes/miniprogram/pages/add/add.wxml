@@ -1,0 +1,62 @@
+<!--pages/add/add.wxml-->
+<view class='container'>
+    <view class='ipt'>
+        <van-cell-group>
+          <van-field
+            value="{{ username }}"
+            clearable
+            label="收货人:"
+            placeholder="请输入姓名"
+            bind:change="username"
+          />
+
+          <van-field
+            value="{{ phonenum }}"
+            type="number"
+            label="联系电话:"
+            placeholder="请输入您的联系方式"
+            bind:change="phonenum"
+          />
+          <van-field
+            maxlength='-1'
+            autosize='true'
+            value="{{ address }}"
+            
+            label="收货地址："
+            placeholder="请输入省市区"
+            bind:change="address"
+          
+          />
+          <van-field
+          type='textarea'
+          value="{{adr}}"
+          placeholder="详细地址（如街道、门牌号等）"
+          bind:change="adr"
+          />
+            
+          
+        </van-cell-group>
+    </view>
+    <view class='radio'>
+        <van-checkbox value="{{ isdefault }}" bind:change="onChange" checked-color="#8EC31F">设为默认</van-checkbox>
+    </view>
+    <view class='btn'>
+        <button type='primary' bindtap="onConfirm"
+        data-isdefault="{{isdefault}}"
+        data-username="{{username}}"
+        data-phonenum="{{phonenum}}"
+        data-address="{{address}}"
+        data-adr="{{adr}}"
+        wx:if="{{!id}}"
+        >确定添加</button>
+        <button type='primary' bindtap="onConfirm"
+        wx:if="{{id}}"
+        data-isdefault="{{isdefault}}"
+        data-username="{{username}}"
+        data-phonenum="{{phonenum}}"
+        data-address="{{address}}"
+        data-adr="{{adr}}"
+        
+        >保存</button>
+    </view>
+</view>

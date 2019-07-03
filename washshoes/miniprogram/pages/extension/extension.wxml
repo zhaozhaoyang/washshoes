@@ -1,0 +1,27 @@
+<!--pages/extension/extension.wxmlstyle='background:url({{obj.qrcodeimage}}) no-repeat;background-size:100%;'-->
+<view class='container'>
+  <view class='box'>
+    <image class='bg' bindload='imageLoadbg' src='{{obj.qrcodeimage}}'></image>
+    <view class='ma'>
+      <image bindload='imageLoadewm' src='{{codeImg}}'></image>
+    </view>
+    <view class='info'>
+      <image src='{{obj.icon}}'></image>
+      <view class='h1'>{{obj.nickname}}</view>
+      <view class='h2'>扫码进入BURSH</view>
+    </view>
+  </view>
+  <view class='btn'>
+    <view>
+      <button type="default" size="{{primarySize}}" open-type='share'>
+        分享
+      </button>
+    </view>
+    <view>
+      <button class='green' size="default" style='padding:0;' bindtap='picimg'>
+        保存图片
+      </button>
+    </view>
+  </view>
+</view>
+<canvas canvasId="myCanvas" class='canv' style="width:{{showbgimgwidth-85}}rpx;height:{{showbghw*showbgimgwidth-50}}rpx;margin:0 auto;"></canvas>

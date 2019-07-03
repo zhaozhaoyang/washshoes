@@ -1,0 +1,32 @@
+<!--pages/evaluate/evaluate.wxml-->
+<view class='container'>
+  <van-popup show="{{ show }}" bind:close="onClose">
+    <view class='delete'>
+      <van-dialog id="van-dialog" show="{{show}}" />
+    </view>
+  </van-popup>
+
+  <block wx:if="{{list}}" wx:for="{{list}}" wx:key="index">
+    <view class='item'>
+      <view class='date'>{{item.time}}</view>
+      <view class='tit'>
+        <text class='content'>{{item.content}}</text>
+        <image src='../../images/shanchu@2x.png' bindtap='onDel' data-index="{{index}}" data-id="{{item.commentid}}"></image>
+      </view>
+      <view class='pic' wx:if="{{item.images.length>0}}">
+        <image wx:for="{{item.images}}" wx:key="idx" wx:for-index="idx" wx:for-item="itm" src='{{itm}}' data-j="{{index}}" data-index="{{idx}}" bindtap="preview"></image>
+
+      </view>
+      <view class='detail'>
+        <van-card wx:if="{{item.goodsid==1}}" price="{{item.goodsprice}}" desc="{{item.type1}}" title="{{item.goodsname}}" thumb="{{ item.goodsicon }}" id="{{item.goodsid}}"> </van-card>
+        <van-card wx:if="{{item.goodsid==2}}" price="{{item.goodsprice}}" desc="{{item.type2}}" title="{{item.goodsname}}" thumb="{{ item.goodsicon }}" id="{{item.goodsid}}"> </van-card>
+        <van-card wx:if="{{item.goodsid==3}}" price="{{item.goodsprice}}" desc="{{item.type4}}" title="{{item.goodsname}}" thumb="{{ item.goodsicon }}" id="{{item.goodsid}}">
+        </van-card>
+      </view>
+    </view>
+  </block>
+  <view wx:if="{{!list}}" class='noth nocoupon'>
+    <image src='../../images/comment.png'></image>
+    <view>暂无评论</view>
+  </view>
+</view>

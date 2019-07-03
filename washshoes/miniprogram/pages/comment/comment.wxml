@@ -1,0 +1,31 @@
+<!--pages/comment/comment.wxml-->
+<view class='container'>
+  <view wx:for="{{list.orderdetail}}" wx:key="index" data-id="{{item.orderdetailid}}" class='item'>
+    <view class='detail'>
+        
+        <van-card
+          price="{{item.goodsprice}}"
+          desc="无痕修复，持久恒新"
+          title="{{item.goodsname}}"
+          thumb="{{ item.goodsimage }}"
+        >
+          <!-- <view slot="tags">共1件商品</view> -->
+          
+        </van-card>
+    </view>
+   
+    <view class="section">
+      <textarea bindblur="bindTextAreaBlur"  placeholder="30字评价+反馈图可获得优惠券【优惠券5元】" placeholder-style="font-size:12px;color:#9F9F9FFF;" />
+      <view class='tu'>
+          <image src='../../images/tu@2x.png' bindtap='upload'></image>
+          <view class='pics'>
+            <image wx:for="{{arr}}" src='{{item}}' wx:key="index"></image>
+          </view>
+      </view>
+
+    </view>
+    </view>
+    <view class='btn'>
+        <button type='primary' bindtap='comment'>提交评价</button>
+    </view>
+</view>

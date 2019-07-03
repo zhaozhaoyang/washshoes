@@ -1,0 +1,180 @@
+/* pages/order/order.wxss */
+
+page {
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.tab {
+  width: 100%;
+}
+
+.num {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  font-weight: 400;
+  height: 84rpx;
+  line-height: 84rpx;
+}
+
+.t2 {
+  color: #8ec31fff;
+}
+
+.van-card {
+  background: #fff !important;
+}
+
+.item {
+  /* height: 426rpx; */
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.addr {
+  width: 90%;
+  margin: 0 auto;
+  background: rgb(248, 248, 248);
+  height: 160rpx;
+  box-sizing: border-box;
+  padding: 24rpx;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  font-weight: 400;
+}
+
+.cont {
+  font-size: 26rpx;
+  font-weight: 400;
+  height: 60rpx;
+  line-height: 39rpx;
+  color: #505050ff;
+}
+
+.time {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  font-weight: 400;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.kuang {
+  /* height: 270rpx; */
+  width: 560rpx;
+  font-size: 28rpx;
+  padding: 30rpx 24rpx 0;
+  /* box-sizing: border-box; */
+}
+
+.section {
+  height: 180rpx;
+  border-bottom: 1px solid #f8f8f8ff;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 90rpx;
+  align-items: center;
+}
+
+.van-button--default {
+  border: 0 !important;
+}
+
+.pay {
+  margin-left: 20rpx;
+  background: rgb(142, 195, 31) !important;
+  color: #fff;
+}
+
+.van-card__price {
+  color: rgb(0, 0, 0) !important;
+}
+
+.cancel {
+  background: rgb(0, 0, 0) !important;
+  color: #fff;
+}
+
+.pay button {
+  background: rgb(142, 195, 31) !important;
+  color: #fff;
+}
+
+.van-button--default {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.picker {
+  font-size: 30rpx;
+  color: #9f9fa0ff;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f8f8f8ff;
+  align-items: center;
+}
+
+.section input {
+  height: 90rpx;
+}
+
+.arrow {
+  width: 24rpx;
+  height: 14rpx;
+}
+
+/* .van-button--primary{
+  background: #000 !important;
+  border: 0!important;
+} */
+
+.van-card__header {
+  align-items: center;
+}
+
+.van-card__content {
+  height: 160rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heji {
+  margin-bottom: 40rpx;
+}
+
+.van-button--primary {
+  border: 0 !important;
+}
+
+.active {
+  color: #8ec31fff !important;
+}
+
+.van-tabs__line {
+  background-color: rgb(142, 195, 31) !important;
+  height: 4rpx !important;
+}
+
+.pull-down-load {
+  height: 80vh;
+}

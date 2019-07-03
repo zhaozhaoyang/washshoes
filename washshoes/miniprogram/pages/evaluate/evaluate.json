@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-card": "../../dist/card/index",
+    "van-popup": "../../dist/popup/index",
+    "van-dialog": "../../dist/dialog/index"
+  },
+  "navigationBarTitleText": "我的评价"
+}

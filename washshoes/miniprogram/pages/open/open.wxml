@@ -1,0 +1,30 @@
+<!--pages/open/open.wxml-->
+<view class='container'>
+  <view class='top'>
+    <image mode="scaleToFill" src="../../images/bgs.png"></image>
+    <text class='vip'>会员卡余额</text>
+    <view class='price'>￥
+      <text class='num'>{{balance}}</text>
+    </view>
+  </view>
+  <view class='money'>充值金额</view>
+  <view class='item'>
+    <view wx:for="{{list}}" wx:key="index">
+      <view style='background:url({{item.usertypeimage}}) no-repeat center;background-size:100% 100%;' data-id='{{item.usertypeid}}' data-index='{{index}}' class="itm {{num==index?'active':''}}" data-id='{{index}}' bindtap="menuClick">
+        <!-- <view class='t1'>{{item.usertype}}</view>
+      <view class='t2'>￥{{item.usertypeprice}}</view>
+      <view class='t3'>享受{{item.zhekou}}折优惠</view> -->
+      </view>
+      <view class='reduce'>￥{{item.usertypeprice}} 享受{{item.zhekou}}折优惠</view>
+    </view>
+  </view>
+  <view class='tips'>
+    <image src='../../images/gantan@2x.png'></image>
+    会员储值仅限于清洗和修复，定制不可使用
+  </view>
+  <view class='btn'>
+    <form bindsubmit="clickFormView" report-submit="true" class="form-view">
+      <button class='green' form-type="submit" bindtap='pay'>立即支付</button>
+    </form>
+  </view>
+</view>

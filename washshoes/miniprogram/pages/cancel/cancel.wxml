@@ -1,0 +1,18 @@
+<!--pages/cancel/cancel.wxml-->
+<view class='container'>
+    <view class='radio'>
+        <van-radio-group value="{{ radio }}" bind:change="onChange">
+          <van-cell-group wx:for="{{list}}" wx:key="index">
+            <van-cell title="{{item}}" clickable data-name="{{index}}" bind:click="onClick">
+              <van-radio name="{{item}}" checked-color="rgb(142,195,31)"/>
+            </van-cell>
+            <!-- <van-cell title="订单信息有错误" clickable data-name="2" bind:click="onClick">
+              <van-radio name="2" />
+            </van-cell> -->
+          </van-cell-group>
+        </van-radio-group>
+    </view>
+    <view class='btn'>
+        <button type='primary' bindtap="sure">确定</button>
+    </view>
+</view>

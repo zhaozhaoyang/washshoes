@@ -1,0 +1,120 @@
+/* pages/fast/fast.wxss */
+.container{
+  width: 100%;
+}
+.item{
+  width: 100%;
+  height: 210rpx;
+  
+}
+.num{
+  width: 112rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+.num text{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  background: #8EC31F;
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 5rpx;
+}
+.content{
+  width: 638rpx;
+  height: 100%;
+  border-bottom: 1px solid #B2B2B2;
+  float: left;
+}
+.close{
+  width: 100%;
+  height: 78rpx;
+  position: relative;
+}
+.close image{
+  display: inline-block;
+  text-align: right;
+  width: 38rpx;
+  height: 38rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 22rpx;
+} 
+.itm{
+  height: 100rpx;
+  width: 100%;
+  font-size: 26rpx;
+}
+.itm .lt{
+  width: 434rpx;
+  float: left;
+}
+.clear{
+  /* padding-top: 38rpx; */
+}
+.md{
+  margin-left: 136rpx;
+  /* color: #B2B2B2; */
+}
+.active{
+  color: #8EC31F;
+  border-bottom: 1px solid #8EC31F;
+}
+.itm .rt{
+  width: 100rpx;
+  height: 100%;
+  float: left;
+}
+.rt image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.add{
+  height: 140rpx;
+  width: 100%;
+  font-size: 24rpx;
+  color: #8EC31F;
+  line-height: 140rpx;
+}
+
+.tu{
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  padding: 60rpx 30rpx 0;
+}
+.add image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn{
+  width: 90%;
+  margin: 0 auto;
+}
+.span{
+  height:60rpx;
+}
+van-tabbar,.van-tabbar{
+  width:100%;
+  height: 60rpx;
+}
+
+.van-tabbar--fixed{
+  position: static!important;
+}
+.van-tabbar{
+  flex-wrap: no-wrap;
+  height:auto!important;
+}
+.btn{
+  background-color: rgb(142, 195, 31);
+  color: rgb(255, 255, 255);
+}

@@ -1,0 +1,5 @@
+<!--pages/service/service.wxml-->
+<view class='container'>
+    <view class='time'>9:20</view>
+    <view class='tit'>您好，BRUSH为您服务！</view>
+</view>

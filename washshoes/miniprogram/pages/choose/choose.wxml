@@ -1,0 +1,25 @@
+<!--pages/choose/choose.wxml-->
+<view class='container'>
+  <view class='tit'>
+    <view class='lt'>选择店铺</view>
+    <view class='rt' bindtap='selPro'>
+      <picker 
+    bindchange="bindPickerChange"
+    value="{{index}}"
+    range="{{array}}">
+      {{array[index]}}
+      <image src='../../images/xiala@2x.png'></image>
+      </picker>
+    </view>
+  </view>
+  <view class='itm' wx:for="{{adr}}" wx:key="index" data-id='{{item.shopid}}' iszong="{{item.iszong}}" data-info="{{item}}" bindtap='select' wx:if="{{adr}}">
+    <view class='name'>
+      <text>{{item.shopname}}</text>
+      <text>{{item.shopphone}}</text>
+    </view>
+    <view class='adr'>
+      {{item.provincename}}{{item.cityname}}{{item.areaname}}{{item.address}}
+    </view>
+  </view>
+  <view wx:if="{{!adr}}" class='noth' >该省暂无店铺</view>
+</view>

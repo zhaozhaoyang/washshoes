@@ -1,0 +1,127 @@
+<!--pages/person/person.wxml || {{tempFilePaths}} url({{obj.qrcodeimage}}) no-repeat center-->
+<view class='container'>
+  <button wx:if="{{!canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+    授权登录
+  </button>
+  <van-popup show="{{ show }}" bind:close="onClose">
+    <view class='con'>
+      <view bindtap="goAmb">从相册选择</view>
+      <view bindtap="takephoto">拍照</view>
+      <view bindtap="cancel">取消</view>
+    </view>
+  </van-popup>
+  <view class='user_wrap'>
+    <image src="../../images/brush.png" class="bg"></image>
+    <view class='user'>
+      <!--style='background: url({{qrcodeimage}}) no-repeat center;' -->
+      <view class='userIfo'>
+        <view class='tou' bindtap='change'>
+          <!-- <image wx:if="{{obj.icon}}" class='ava' src="{{obj.icon}}" /> -->
+          <image class='ava' src="{{icon}}" mode='scaleToFill' />
+          <!-- <open-data type="userAvatarUrl" wx:else ></open-data> -->
+        </view>
+        <view class='username'>
+          <input class='t1' disabled="{{disabled}}" bindtap="changeName" value="{{nick}}" bindblur="bindblur" bindfocus="bindfocus"></input>
+          <!-- style='background:url(../../images/13@2x.png) no-repeat left;background-size:100%;' -->
+          <view class='h2' bindtap="goVip">
+            <image src="../../images/13@2x.png" class="usertype" mode="scaleToFill"></image>
+            <text class='t2'>{{obj.usertype}}</text>
+            <van-icon name="arrow" />
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <!-- 新增布局 二维码 和 推广码 -->
+  <view class='ewm'>
+    <view class='ma' bindtap="goExten">
+      <view class='ma_top'>
+        <image src='../../images/ewm.png' mode='scaleToFill' data-obj="{{obj}}"></image>
+        <text>推广码</text>
+      </view>
+      <view class='ma_xia'>分享推广码 享优惠</view>
+    </view>
+    <view class='ma' bindtap='scanCode'>
+      <view class='ma_top'>
+        <image src='../../images/saoma.png' mode='scaleToFill' bindtap="goExten" data-obj="{{obj}}"></image>
+        <text>扫码付款</text>
+      </view>
+      <view class='ma_xia'>到店扫码 快捷支付</view>
+    </view>
+  </view>
+  <!-- 订单状态 -->
+  <view class='od'>
+    <view class='order' bindtap='goOrder' data-id="0">
+      <view>全部订单</view>
+      <view>
+        <van-icon name="arrow" color="#8EC31FFF" />
+      </view>
+    </view>
+    <view class='state'>
+      <view class='itm' bindtap='goOrder' data-id="1">
+        <image src='../../images/fu@2x.png' mode='scaleToFill'></image>
+        <text>待付款</text>
+      </view>
+      <view class='itm' bindtap='goOrder' data-id="2">
+        <image src='../../images/biao.png' mode='scaleToFill'></image>
+        <text>待邮寄</text>
+      </view>
+      <view class='itm' bindtap='goOrder' data-id="3">
+        <image src='../../images/fa@2x.png' mode='scaleToFill'></image>
+        <text>待发货</text>
+      </view>
+      <view class='itm' bindtap='goOrder' data-id="4">
+        <image src='../../images/shou@2x.png' mode='scaleToFill'></image>
+        <text>待收货</text>
+      </view>
+      <view class='itm' bindtap='goOrder' data-id="5">
+        <image src='../../images/ping@2x.png' mode='scaleToFill'></image>
+        <text>待评价</text>
+      </view>
+    </view>
+  </view>
+  <!-- 列表 我的评价-设置 -->
+  <view class='items'>
+    <view class='item' bindtap='goEva'>
+      <view class='lt'>
+        <image src='../../images/xing@2x.png' mode='widthFix'></image>
+        <text>我的评价</text>
+      </view>
+    </view>
+    <view class='item' bindtap='goExt'>
+      <view class='lt'>
+        <image src='../../images/ka@2x.png' mode='widthFix'></image>
+        <text>我的推广</text>
+      </view>
+    </view>
+
+    <view class='item' bindtap='goCou'>
+      <view class='lt'>
+        <image src='../../images/you@2x.png' mode='widthFix'></image>
+        <text>优惠券</text>
+      </view>
+    </view>
+
+    <view class='item' bindtap='goAdd'>
+      <view class='lt'>
+        <image src='../../images/di2x.png' mode='widthFix'></image>
+        <text>地址管理</text>
+      </view>
+    </view>
+
+    <view class='item'>
+      <button class='lt' open-type="contact" hover-class="none">
+        <image src='../../images/ke@2x.png' mode='widthFix'></image>
+        <text>客服中心</text>
+      </button>
+    </view>
+
+    <view class='item' style='border:0!important;' bindtap="goSet">
+      <view class='lt'>
+        <image src='../../images/she@2x.png' mode='widthFix'></image>
+        <text>设置</text>
+      </view>
+    </view>
+  </view>
+</view>

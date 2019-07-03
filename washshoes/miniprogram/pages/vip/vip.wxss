@@ -1,0 +1,134 @@
+/* pages/vip/vip.wxss */
+@import '../../wxParse/wxParse.wxss';
+.container{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.card{
+  width: 85%;
+  height: 400rpx;
+  margin: 100rpx auto 0;
+  position: relative;
+}
+.bgcard{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400rpx;
+  z-index: -2;
+}
+.tit{
+  height: 140rpx;
+  line-height: 140rpx;
+  font-size: 40rpx;
+  text-align: center;
+  margin-top: 40rpx;
+  color: #fff;
+}
+.cont{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70rpx;
+  font-size: 24rpx;
+  align-items: center;
+  color: #fff;
+}
+.t1{
+  font-size: 28rpx;
+  font-weight: 500;
+  height: 66rpx;
+  line-height: 66rpx;
+  color: #fff;
+}
+.cont image{
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+}
+.btn{
+  width: 240rpx;
+  height: 70rpx;
+  position: absolute;
+  left: 50%;
+  bottom: -30rpx;
+  margin-left: -100rpx;
+  z-index: 99;
+}
+.btn button{
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 30px;
+  font-size: 14px;
+  margin-top: 
+}
+.tips{
+  width: 90%;
+  margin: 100rpx auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tips_list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tips_list>image{
+  width: 120rpx;
+  height: 120rpx;
+}
+/* .tip{
+  height: 100rpx;
+}
+.t2{
+  font-size: 26rpx;
+  color: #fff;
+  padding-left: 60rpx;
+}
+.t3{
+  font-size: 26rpx;
+  font-weight: 400;
+}
+.t4{
+  font-size: 26rpx;
+  font-weight: 400;
+  height: 102rpx;
+  line-height:102rpx;
+}
+.content{
+  font-size: 30rpx;
+}
+.rt{
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.van-icon{
+  display: block!important;
+} */
+.rt{
+  height: 50rpx;
+  line-height: 50rpx;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.van-icon{
+  display: block!important;
+} 
+.bg{
+  width: 100%;
+  height: 360rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+.bg>image{
+  width: 100%;
+  height: 100%;
+}

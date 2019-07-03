@@ -1,0 +1,23 @@
+<!--pages/integral/integral.wxml -->
+
+<view class='container'>
+    <block wx:if="{{integral}}">
+      <view class='tit'>我的积分</view>
+    <view class='tot'>{{integral}}</view>
+    <view class='detail' style='background:url(../../images/dian@2x.png) no-repeat left center;background-size:100%;'>积分明细</view>
+    <view class='cell'>
+        <van-cell-group >
+          <van-cell
+            wx:for="{{list}}" wx:key="index"
+            title="{{item.integraltitle}}"
+            value="+{{item.integral}}"
+            id="{{item.integralid}}"
+            label="{{item.adtime}}"
+          />
+          
+          
+        </van-cell-group>
+    </view>
+    </block>
+    <view class='noth' wx:if="{{!integral}}">暂无积分</view>
+</view>

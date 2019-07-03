@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "van-stepper": "../../dist/stepper/index",
+    "van-popup": "../../dist/popup/index",
+    "van-dialog": "../../dist/dialog/index"
+  }
+  
+}

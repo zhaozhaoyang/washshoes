@@ -1,0 +1,27 @@
+<!--pages/coupons/coupons.wxml-->
+<view class='contianer'>
+  <view class='h1'>
+
+    <view class='itm' wx:for="{{list}}" wx:key='index' data-id='{{item.mycouponid}}' wx:if="{{list}}">
+      <view class='info'>
+
+        <view class='top'>
+          <view class='ico'>￥</view>
+          <view class='big'>{{item.price}}</view>
+          <view class='rt'>
+            <view class='view'>优惠券</view>
+            <view class='text'>满{{item.fullprice}}元可用</view>
+          </view>
+        </view>
+        <view class='bottom'>
+          有效日期：{{item.endtime}}
+        </view>
+      </view>
+
+      <view class='tap' bindtap='goIndex' data-index='{{index}}'>
+        立即使用
+      </view>
+    </view>
+    <view class='noth' wx:if="{{!list}}">暂无</view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+/* pages/banner/banner.wxss */
+@import '../../wxParse/wxParse.wxss';
+page,.container{
+  height: 100%;
+}
+.container{
+  background: #f8f8f8;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}

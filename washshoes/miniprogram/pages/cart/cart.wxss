@@ -1,0 +1,279 @@
+/* pages/cart/cart.wxss */
+
+page, .container {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  background: rgba(242, 242, 242, 1);
+}
+
+.cartMain {
+  /* margin-bottom: 120rpx; */
+  width: 100%;
+  padding-bottom: 87rpx;
+  /* overflow: hidden; */
+}
+
+.cart_main {
+  /* overflow: hidden; */
+  flex: 1;
+}
+
+.cart-image {
+  width: 180rpx;
+  height: 180rpx;
+  float: left;
+  padding: 15rpx 10rpx;
+}
+
+.cart-box {
+  height: 215rpx;
+  background: white;
+  width: 95%;
+  margin: 20rpx auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10rpx;
+}
+
+.cart-boxtwo {
+  display: flex;
+  flex-direction: column;
+}
+
+.left_imgae {
+  float: left;
+  margin: 0 20rpx;
+}
+
+.left_box {
+  float: left;
+  margin-top: 0rpx;
+  margin-left: 20rpx;
+  /* line-height: 60rpx */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 215rpx;
+}
+
+.cart-title {
+  /* margin-top: 30rpx; */
+  font-family: "微软雅黑";
+  font-size: 30rpx;
+  font-weight: 500;
+}
+
+.cart-price {
+  display: flex;
+  color: rgb(0, 0, 0);
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.cart_sum, .sum_text {
+  color: rgb(0, 0, 0) !important;
+}
+
+.sum_color {
+  font-size: 28rpx;
+  color: rgba(142, 195, 31, 1) !important;
+  font-weight: 800;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+  height: 215rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-right: 20rpx;
+}
+
+.right image {
+  width: 38rpx;
+  height: 44rpx;
+  /* margin-top: 30rpx; */
+}
+
+.right text {
+  font-size: 30rpx;
+}
+
+.input {
+  display: block;
+  width: 65rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  text-align: center;
+  /* border: 1px solid red; */
+  float: left;
+}
+
+.cart-add {
+  border-left: none;
+  background: #fbfbfb;
+}
+
+.cart-reduce {
+  border-right: none;
+  background: #fbfbfb;
+}
+
+.cart-text {
+  width: 90rpx;
+  background: #f4f4f4;
+  font-size: 30rpx;
+}
+
+.cart-bottom {
+  position: fixed;
+  width: 100%;
+  height: 102rpx;
+  bottom: 0;
+  background: white;
+  border-top: 1px solid #e8e8e8ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.yuan {
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  border: 1px solid red;
+}
+
+.icon {
+  margin-left: 20rpx;
+}
+
+.SpCart {
+  display: block;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.Sptext {
+  font-size: 30rpx;
+}
+
+.cart-icon {
+  margin: 18rpx 20rpx;
+  float: left;
+}
+
+.cart-sum {
+  width: 300rpx;
+  height: 100%;
+  /* line-height: 87rpx; *//* background: red; */
+  float: right;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .button-hover{
+  background: rgb(142,195,31)!important;
+} */
+
+button[disabled] {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.cart-pay {
+  width: 230rpx;
+  height: 100%;
+  background: rgb(142, 195, 31) !important;
+  float: right;
+}
+
+.cart_pay {
+  /* display: block; *//* line-height: 87rpx; */
+  height: 100%;
+  text-align: center;
+  background: #8ec31fff !important;
+  font-size: 30rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sum_color {
+  color: red;
+  font-size: 25rpx;
+}
+
+.sum_text {
+  font-size: 30rpx;
+}
+
+.checkAll {
+  line-height: 87rpx;
+  font-size: 28rpx;
+}
+
+.noth {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  font-size: 30rpx;
+  /* color: #ccc; */
+}
+
+.conf {
+  width: 608rpx;
+  height: 286rpx;
+}
+
+.nocoupon image {
+  width: 354rpx;
+  height: 262rpx;
+}
+
+.desc {
+  height: 49rpx;
+  line-height: 49rpx;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  background: #f5f5f5ff;
+  font-size: 24rpx;
+  text-align: center;
+  font-weight: 400;
+  color: #999999ff;
+  /* width:196rpx; */
+  border-radius: 10rpx;
+}
+
+.del {
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.del>image {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.cart-box:first {
+  margin-top: 0 !important;
+}

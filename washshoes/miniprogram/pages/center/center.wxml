@@ -1,0 +1,12 @@
+<!--pages/center/center.wxml-->
+<view class='container'>
+  <view class='btn'>
+    <button class='green' bindtap="goCall">客服中心</button>
+  </view>
+  <view class='btn'>
+    <!-- <button type='primary' bindtap="goSer">在线客服</button> -->
+    <button class='service green' open-type="contact">
+      联系客服
+    </button>
+  </view>
+</view>

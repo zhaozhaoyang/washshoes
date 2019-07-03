@@ -1,0 +1,113 @@
+<!--index.wxml-style='--style='background:url(../../images/tanc@3x.png) no-repeat center;background-size:100%;'-->
+
+<view class="container">
+  <button wx:if="{{is_auth == 0}}" class='auth-btn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+  </button>
+  <view class='shade' hidden='{{popup}}'></view>
+  <view class='shade_box popup' hidden='{{popup}}'>
+    <view class='content'>
+      <image class='bg' src='../../images/tanc@3x.png' mode="scaleToFill" bindtap='goNew' data-id="{{couponobj.couponid}}"></image>
+      <!-- <view class='jian' bindtap='goNew' data-id="{{couponobj.couponid}}">
+        <view class='left'>
+          <view class='txt1'>￥</view>
+          <view class='txt2'>{{couponobj.price}}</view>
+        </view>
+        <view class='right'>
+          <view class='txt3'>优惠券</view>
+          <view class='txt4'>满{{couponobj.fullprice}}元使用</view>
+          <view class='txt5'>点击领取></view>
+        </view>
+      </view> -->
+
+
+
+      <!-- <image src='../../images/tanc@3x.png'></image> -->
+    </view>
+    <view class='msg' bindtap='hidePopup'>
+      <image src="../../images/quxiao@3x.png"></image>
+    </view>
+  </view>
+
+
+
+  <!-- 轮播图 -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style='width:100%;height:380rpx;'>
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item.bannerimage}}" data-id="{{index}}" mode='scaleToFill' class="slide-image" style="display:block;width:100%;height:100%;" width="100%" height="100%" bindtap="goBanner" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 分类 -->
+  <view class='category'>
+    <view class='cate-item' bindtap='goDet' data-id="1">
+
+      <image src='{{cleanimage}}' />
+
+      <text>球鞋清洗</text>
+    </view>
+    <view class='cate-item' bindtap='goDet' data-id="2">
+      <image src='{{repairimage}}' />
+      <text>球鞋修复</text>
+    </view>
+    <view class='cate-item' bindtap='goDet' data-id="3">
+      <image src='{{customizedimage}}' />
+      <text>球鞋定制</text>
+    </view>
+  </view>
+  <!-- 开通会员 -->
+  <view class='vip'>
+    <view class='vip-item' bindtap='goVip'>
+      <image class='s1' src='../../images/s1.png' mode='scaleToFill'></image>
+      <view class='vip1'>
+        <view class='lf'>
+          <text class='h3'>开通会员</text>
+          <text class='h5'>折扣享不停</text>
+          <view class='arrow'>
+            <image src='../../images/gengduo@2x.png' style='width:100%; height:100%;display:block;'></image>
+          </view>
+        </view>
+        <view class='rt'>
+          <image src='{{memberimage}}' mode='scaleToFill'></image>
+        </view>
+      </view>
+    </view>
+    <view class='vip-item' bindtap='goCou'>
+      <image class='s1' src='../../images/s2.png' mode='scaleToFill'></image>
+      <view class='vip1'>
+        <view class='lf'>
+          <text class='h3'>领券中心</text>
+          <text class='h5'>优惠天天有</text>
+          <view class='arrow'>
+            <image src='../../images/gengduo@2x.png' style='width:100%; height:100%;display:block;'></image>
+          </view>
+        </view>
+        <view class='rt'>
+          <image src='{{couponimage}}' mode='scaleToFill'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 快速下单 -->
+  <view class='fast' bindtap='fast'>快速下单</view>
+  <!-- 清洗 -->
+  <view class='clear' style='width:100%;height:auto;' bindtap='goDet' data-id='1'>
+    <!-- <view class='title'>
+        <image class='point' mode='scaleToFill' src='../../images/dian@2x.png'></image>
+    </view> -->
+    <image src='{{specialareaimage}}' style='display:block;width:100%;height:100%;' mode='widthFix'></image>
+  </view>
+  <view class='clear' style='width:100%;height:auto;' bindtap='goDet' data-id='2'>
+    <image src='{{repairareaimage}}' style='display:block;width:100%;height:100%;' mode='widthFix'></image>
+  </view>
+  <view class='clear' style='width:100%;height:auto;' bindtap='goDet' data-id='3'>
+    <image src='{{customizedareaimage}}' style='display:block;width:100%;min-height:50%;' mode='widthFix'></image>
+  </view>
+  <!-- 联系客服 -->
+  <button class='service' open-type="contact">
+    联系客服
+  </button>
+
+
+</view>

@@ -1,0 +1,16 @@
+/* pages/center/center.wxss */
+page{
+  height: 100%;
+}
+.container{
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.btn{
+  width: 100%;
+  margin: 50rpx 0;
+}

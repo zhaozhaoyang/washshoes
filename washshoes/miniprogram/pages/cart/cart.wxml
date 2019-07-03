@@ -1,0 +1,56 @@
+<view class='container'>
+  <!--  弹窗确认-->
+  <!-- <van-popup >
+    <view class='conf'> -->
+  <van-dialog id="van-dialog" show="{{ show }}" bind:close="onClose" />
+  <!-- </view>
+  </van-popup> -->
+  <view class='cartMain' wx:if="{{cartItems}}">
+    <!-- <block> -->
+    <view class='del'>
+      <image src='/images/del.png' bindtap='shanchu'></image>
+    </view>
+    <view wx:for="{{cartItems}}" class='cart-box' data-index="{{index}}" wx:key="index" data-id="{{item.goodscarid}}">
+      <view class='icon'>
+        <icon wx:if="{{item.selected}}" type="success" color="#8EC31FFF" size="20" bindtap="selectedCart" data-index="{{index}}" data-id="{{item.goodscarid}}" />
+        <icon wx:else type="circle" bindtap="selectedCart" size="20" data-index="{{index}}" />
+      </view>
+      <view class='cart_main'>
+        <view class='left'>
+          <view class='left_imgae'>
+            <image class="cart-image" src="{{item.goodsimage}}"></image>
+          </view>
+          <view class='left_box'>
+            <text class="cart-title">{{item.goodsname}}</text>
+            <view class='desc' wx:if="{{item.goodsid==1}}">{{item.type1}}</view>
+            <view class='desc' wx:if="{{item.goodsid==2}}">{{item.type2}},{{item.type3}}</view>
+            <view class='desc' wx:if="{{item.goodsid==3}}">{{item.type4}}</view>
+            <text class="cart-price">￥{{item.goodsprice}}</text>
+          </view>
+        </view>
+        <view class='right'>
+          <!-- <image src='/images/del.png' bindtap='shanchu' data-id="{{item.goodscarid}}" data-index="{{index}}"></image> -->
+          <text>x1</text>
+        </view>
+      </view>
+    </view>
+    <!-- </block> -->
+  </view>
+  <view wx:else class='noth nocoupon'>
+    <image src='../../images/kong.png'></image>
+    <view>购物车空空如也，快去逛逛吧</view>
+  </view>
+  <!-- 底部 -->
+  <view class="cart-bottom">
+    <icon wx:if="{{CheckAll}}" class="cart-icon" type="success" color="#8EC31FFF" size="20" bindtap="select" data-index="{{index}}" />
+    <icon wx:else type="circle" class="cart-icon" size="20" bindtap="select" data-index="{{index}}" />
+    <text class='checkAll'>全选</text>
+    <view class='cart-sum'>
+      <text class='sum_text'>总价：</text>
+      <text class='sum_color'>￥{{total}}</text>
+    </view>
+    <view class='cart-pay'>
+      <button class='cart_pay' bindtap="go" data-id="{{item.goodscarid}}" disabled='{{disabled}}' type="primary">结算</button>
+    </view>
+  </view>
+</view>

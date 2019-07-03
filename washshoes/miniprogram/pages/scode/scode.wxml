@@ -1,0 +1,95 @@
+<!--pages/scode/scose.wxml-->
+<view class='container'>
+  <!-- 优惠券弹窗 -->
+  <van-popup id="popup" show="{{ show }}" z-index="999" position="bottom" overlay="{{ true }}">
+    <view class='cou'>
+      <view class='close'>
+        <image src='../../images/quxiao@3x.png' class='cha' bindtap='close' mode='scaleToFill'></image>
+      </view>
+      <block class='itms'>
+        <view class='itm' wx:for="{{list}}" wx:key='index' data-id='{{item.mycouponid}}' wx:if="{{list}}">
+          <view class='infos'>
+            <view class='top'>
+              <view class='ico'>￥</view>
+              <view class='big'>{{item.price}}</view>
+              <view class='rt'>
+                <view class='view'>优惠券</view>
+                <view class='text'>满{{item.fullprice}}元可用</view>
+              </view>
+            </view>
+            <view class='bottom'>
+              有效日期：{{item.endtime}}
+            </view>
+          </view>
+          <view class='tap' bindtap='goBack' data-index='{{index}}'>
+            立即使用
+          </view>
+        </view>
+        <view class='noth' wx:if="{{!list}}">暂无</view>
+      </block>
+    </view>
+  </van-popup>
+  <!--   -->
+  <view class='info' wx:if="{{type==2}}">
+    <view class='h1'>
+      <view class='t1'>
+        <text class='tot'>消费总额:</text>
+        <view class='input'>
+          <input class='h2' placeholder='询问服务员后输入' bindinput='bindinput' type='number' placeholder-style="text-align:center" value="{{value1}}">
+          </input>
+          <text>元</text>
+        </view>
+      </view>
+    </view>
+    <view class='h3'>
+      <view class='coupon' bindtap="coupons" value="{{value}}">
+        <text class='black'>使用优惠劵</text>
+        <view class='t2'>
+          <text>{{value}}</text>
+          <van-icon name="arrow" />
+        </view>
+      </view>
+      <view class='pay'>
+        <text>实付金额</text>
+        <text class='num'>￥{{total}}元</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='meth'>
+    <view class='title'>支付方式选择</view>
+    <van-radio-group value="{{ radio }}" bind:change="onChange">
+      <view class='wei'>
+        <view class='xin'>
+          <image src='../../images/ka.png'></image>
+          <text>会员卡支付（{{balance}}）</text>
+        </view>
+        <view class='weis'>
+          <van-radio name="会员卡支付" checked-color="#8EC31F"></van-radio>
+        </view>
+      </view>
+      <view class='wei' style='border-bottom:1px solid #f8f8f8' wx:if="{{checked == 'false' || checked == 0}}">
+        <view class='xin'>
+          <image src='../../images/weix@2x.png'></image>
+          <text>微信支付</text>
+        </view>
+        <view class='weis'>
+          <van-radio name="微信支付" checked-color="#8EC31F"></van-radio>
+        </view>
+      </view>
+    </van-radio-group>
+  </view>
+
+  <view class='tips'>
+    <image src='../../images/gantan@2x.png'></image>
+    买单仅限于到店支付，请确认金额后提交
+  </view>
+  <!--<button class="weifat2" form-type='submit' ></button>-->
+
+  <view class='btn'>
+    <form bindsubmit="clickFormView" report-submit="true" class="form-view">
+      <button class='green' wx:if="{{type==2}}" bindtap='order' form-type='submit'>和店员已确认，立即买单</button>
+      <button class='green' wx:if="{{type==1}}" bindtap='goPay' form-type='submit' name="pay">立即支付</button>
+    </form>
+  </view>
+</view>

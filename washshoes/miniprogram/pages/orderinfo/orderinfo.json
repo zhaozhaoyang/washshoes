@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-card": "../../dist/card/index",
+    "van-cell": "../../dist/cell/index",
+    "van-cell-group": "../../dist/cell-group/index",
+    "van-submit-bar": "../../dist/submit-bar/index",
+    "van-panel": "../../dist/panel/index",
+    "van-popup": "../../dist/popup/index",
+  "van-checkbox": "../../dist/checkbox/index",
+  "van-checkbox-group": "../../dist/checkbox-group/index"
+  },
+  "navigationBarTitleText": "订单信息"
+}

@@ -1,0 +1,86 @@
+/* pages/evaluate/evaluate.wxss */
+page,.container{
+  height: 100%;
+}
+.container{
+  width: 95%;
+  margin: 0 auto;
+}
+.delete{
+  width: 610rpx;
+  height: 290rpx;
+}
+.date{
+  font-size: 24rpx;
+  font-weight: 400;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  color: #505050FF;
+}
+.item{
+  /* height: 475rpx; */
+  width: 100%;
+}
+.tit{
+  font-size: 28rpx;
+  font-weight: 500;
+  /* height: 64rpx; */
+  /* line-height: 64rpx; */
+  /* min-height: 64rpx; */
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.content{
+  width: 95%;
+  font-weight: 500;
+}
+.tit image{
+  display: block;
+  width: 36rpx;
+  height: 41rpx;
+}
+.pic{
+  width: 100%;
+  height: 172rpx;
+  display: flex;
+  /* justify-content: space-between; */
+}
+.pic image{
+  display: block;
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 4px;
+  margin-right:10rpx;
+
+}
+.detail{
+  width: 100%;
+  height: 200rpx;
+  margin: 20rpx auto;
+}
+.none{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+}
+.van-card__content {
+flex:1;
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+}
+.van-card__price{
+  color:rgba(0,0,0,1)!important;
+}
+
+.nocoupon image{
+  width:354rpx;
+  height: 262rpx;
+}

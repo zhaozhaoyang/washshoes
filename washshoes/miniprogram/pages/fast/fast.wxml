@@ -1,0 +1,43 @@
+<!--pages/fast/fast.wxml-->
+<view class='container'>
+  <view class='list'>
+    <view class='item' wx:for="{{list}}" wx:key="index">
+      <view class='num'>
+        <text>{{index+1}}</text>
+      </view>
+      <view class='content'>
+        <view class='close'>
+          <image src='../../images/quxiao@3x.png' data-id='{{index}}' bindtap='del' wx:if="{{length!=1}}"></image>
+        </view>
+        <view class='itm'>
+          <view class='lt'>
+            <view class='span'>
+              <!-- <van-tag wx:for="{{type}}" wx:key="index" data-id="{{item.typeid}}">{{item.typename}}</van-tag>-->
+              <van-tabbar bind:change="onChange" fixed="false" style="position:static;" data-index="{{index}}">
+                <block wx:for="{{types}}" wx:key="index">
+                  <van-tabbar-item>{{item.typename}}</van-tabbar-item>
+                </block>
+              </van-tabbar>
+            </view>
+            <view class='clear'>清洗服务</view>
+          </view>
+          <view class='rt' bindtap='upload' data-index="{{index}}">
+            <image src="../../images/tu@2x.png" wx:if="{{!arr[index][0]}}"></image>
+            <image wx:if="{{arr[index][0]}}" src="{{arr[index][0]}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='add' bindtap='add'>
+      <view class='tu'>
+        <image src='../../images/tianjia@3x.png'></image>
+      </view>
+      <text>再加一双</text>
+    </view>
+  </view>
+  <view class='btn'>
+    <form bindsubmit="clickFormView" report-submit="true" class="form-view">
+      <button size="large" class='btn' form-type="submit" bindtap="submit">共{{total}}元 | 去下单</button>
+    </form>
+  </view>
+</view>

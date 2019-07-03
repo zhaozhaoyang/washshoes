@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-button": "../../dist/button/index",
+    "van-tag": "../../dist/tag/index",
+    "van-tabbar": "../../dist/tabbar/index",
+    "van-tabbar-item": "../../dist/tabbar-item/index"
+    },
+  "navigationBarTitleText": "快速下单"
+}

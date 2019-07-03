@@ -1,0 +1,29 @@
+/* pages/feedback/feedback.wxss */
+page{
+  height: 100%;
+}
+.container{
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+}
+.tit{
+  font-size: 24rpx;
+  color: #9F9F9FFF;
+  width: 100%;
+  text-align: left;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.btn{
+  width: 100%;
+}
+.content{
+  height: 580rpx;
+  width: 100%;
+}
+textarea{
+  height: 100%;
+  width: 100%;
+  font-size: 30rpx;
+}

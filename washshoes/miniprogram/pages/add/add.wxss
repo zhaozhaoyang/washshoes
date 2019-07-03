@@ -1,0 +1,20 @@
+/* pages/add/add.wxss */
+.ipt{
+  width: 100%;
+}
+.radio{
+  width: 90%;
+  margin: 20rpx auto;
+  font-size: 26rpx;
+}
+.btn{
+  width: 562rpx;
+  height: 88rpx;
+  margin: 200rpx auto;
+}
+textarea{
+  height: 150px!important;
+}
+button[type=primary]{
+  background:rgba(142,195,31,1);
+}

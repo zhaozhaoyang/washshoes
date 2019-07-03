@@ -1,0 +1,71 @@
+/* pages/address/address.wxss */
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+.item{
+  width: 100%;
+  height: 272rpx;
+  border-bottom: 1px solid #f8f8f8;
+}
+.conf{
+  width: 608rpx;
+  height: 286rpx;
+}
+.name{
+  font-size: 28rpx;
+}
+.t1{
+  font-weight: bold;
+  padding-right: 42rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+}
+.adr{
+  font-size: 26rpx;
+  font-weight: 500;
+}
+.default{
+  height: 90rpx;
+  display: flex;
+  justify-content:space-between;
+  flex-direction:row-reverse;
+  align-items: center;
+  font-size: 26rpx;
+}
+.default .van-radio__label{
+  font-size: 28rpx;
+}
+.btn{
+  width: 114rpx;
+  height: 58rpx;
+  font-size: 24rpx;
+  color: #fff;
+  display: inline-block;
+}
+.edit{
+  background: #000;
+}
+.del{
+  background: rgb(142,195,31);
+  margin-left: 26rpx;
+}
+.add{
+  width: 562rpx;
+  height: 88rpx;
+  margin: 100rpx auto;
+}
+.van-radio-group,van-radio-group{
+  width: 100%;
+}
+.more{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+}
+.isdefault{
+  color:rgb(142,195,31);
+}
+button[type=primary]{
+  background:rgba(142,195,31,1);
+}

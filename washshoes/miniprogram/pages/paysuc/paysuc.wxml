@@ -1,0 +1,16 @@
+<!--pages/paysuc/paysuc.wxml-->
+<view class='container'>
+    <view class='tu' wx:if="{{type==1}}">
+        <image src='../../images/desk.png'></image>
+    </view>
+    <view class='tu' wx:if="{{type==2}}">
+        <image src='../../images/type.png' style='width:320rpx;height:320rpx;'></image>
+    </view>
+    <view class='btn'>
+        <van-button type="primary" bindtap='goIndex'>再逛逛</van-button>
+    </view>
+    <view class='tips' wx:if="{{type==1}}">
+        <image src='../../images/gantan@2x.png'></image>
+        工作人员将在12小时之内对您的订单进行评估.
+    </view>
+</view>

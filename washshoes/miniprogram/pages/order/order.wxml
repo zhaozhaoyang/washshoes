@@ -1,0 +1,194 @@
+<!--pages/order/order.wxml-->
+<view class='container'>
+  <!-- <scroll-view scroll-y = true bindscrolltolower="loadMore" bindscrolltoupper="refesh"> -->
+  <!-- 弹窗选择物流公司 -->
+  <van-popup show="{{ show }}" bind:close="onClose">
+    <view class='kuang'>
+      <view class="section">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key="logisticsname" mode='selector'>
+          <view class="picker">
+            选择快递公司:{{array[index].logisticsname}}
+            <view class='arrow'>
+              <van-icon name="arrow-down" />
+            </view>
+          </view>
+        </picker>
+        <input placeholder="请输入快递单号" value="{{value}}" auto-focus bindblur="bindblur" />
+      </view>
+      <view class='btn'>
+        <view bindtap="onCancel">取消</view>
+        <view bindtap="onConfirm">确定</view>
+      </view>
+    </view>
+  </van-popup>
+  <view class='tab'>
+    <van-tabs active="{{ active }}" bind:change="change" sticky='true' animated="false" line-width='18' border='false' color='#8EC31FFF' tab-active-class="active">
+      <!-- 全部订单 -->
+      <van-tab title="全部">
+        <view class='item' wx:for="{{list}}" wx:key="index" wx:if="{{list}}">
+          <view class='num'>
+            <text class='t1'>订单编号：{{item.ordernum}}</text>
+            <text class='t2'>{{item.state}}</text>
+          </view>
+          <van-card data-id="{{item.ordernum}}" bindtap="goDet" num="{{item.orderdetail.length}}" price="{{item.actualprice}}" desc="{{item.orderdetail[0].goodsid==1 ? item.orderdetail[0].type1 : item.orderdetail[0].goodsid==2 ? item.orderdetail[0].type2 : item.orderdetail[0].type4}}"
+            title="{{item.orderdetail[0].goodsname}}" thumb="{{item.orderdetail[0].goodsimage}}">
+
+            <view slot="footer">
+              <form bindsubmit="clickFormView" report-submit="true" class="form-view">
+                <block wx:if="{{item.state=='待付款'}}">
+                  <button form-type="submit" size="mini" class='cancel' data-id="{{item.ordernum}}" bindtap="cancel">取消订单</button>
+                  <button form-type="submit" size="mini" class='pay' data-isxuan="{{item.isxuan}}" data-id="{{item.ordernum}}" data-actualprice="{{item.actualprice}}" catchtap="goPay">付款</button>
+                </block>
+                <button size="mini" form-type="submit" class='pay' data-index='{{index}}' data-id="{{item.ordernum}}" catchtap='onChange' wx:if="{{item.state=='待邮寄'}}">填写物流单号
+                </button>
+                <button form-type="submit" size="mini" class='pay' data-id="{{item.ordernum}}" data-index='{{index}}' catchtap="goBuCha" wx:if="{{item.state=='待补差'}}">补差价￥{{item.chajia}}</button>
+              </form>
+            </view>
+          </van-card>
+        </view>
+        <view class="noth nocoupon" wx:if="{{!list}}">
+          <image src='../../images/none.png'></image>
+          <view>暂无待付款订单</view>
+        </view>
+      </van-tab>
+      <van-tab title="待付款">
+        <!-- 待付款 -->
+        <view class='item' wx:for="{{list}}" wx:key="index">
+          <view class='num'>
+            <text class='t1'>订单编号：{{item.ordernum}}</text>
+            <text class='t2'>{{item.state}}</text>
+          </view>
+          <van-card data-id="{{item.ordernum}}" bindtap="goDet" num="{{item.orderdetail.length}}" price="{{item.actualprice}}" desc="{{item.orderdetail[0].goodsid==1 ? item.orderdetail[0].type1 : item.orderdetail[0].goodsid==2 ? item.orderdetail[0].type2 : item.orderdetail[0].type4}}"
+            title="{{item.orderdetail[0].goodsname}}" thumb="{{ item.orderdetail[0].goodsimage }}">
+            <!-- <view slot="tags">共1件商品</view> -->
+            <view slot="footer">
+              <form bindsubmit="clickFormView" report-submit="true" class="form-view">
+                <button size="mini" class='cancel' form-type="submit" data-id="{{item.ordernum}}" catchtap="cancel">取消订单</button>
+                <button size="mini" type="primary" form-type="submit" class='pay' data-isxuan="{{item.isxuan}}" data-id="{{item.ordernum}}" data-actualprice="{{item.actualprice}}" catchtap="goPay">付款</button>
+              </form>
+            </view>
+          </van-card>
+        </view>
+        <view class="noth nocoupon" wx:if="{{!list}}">
+          <image src='../../images/none.png'></image>
+          <view>暂无待付款订单</view>
+        </view>
+      </van-tab>
+      <van-tab title="待邮寄">
+        <view class='item' wx:for="{{list}}" wx:key="index" wx:if="{{list}}">
+          <view class='num'>
+            <text class='t1'>订单编号：{{item.ordernum}}</text>
+            <text class='t2'>{{item.state}}</text>
+          </view>
+          <van-card num="{{item.orderdetail.length}}" price="{{item.actualprice}}" desc="{{item.orderdetail[0].goodsid==1 ? item.orderdetail[0].type1 : item.orderdetail[0].goodsid==2 ? item.orderdetail[0].type2 : item.orderdetail[0].type4}}" title="{{item.orderdetail[0].goodsname}}"
+            thumb="{{ item.orderdetail[0].goodsimage }}" data-id="{{item.ordernum}}" bindtap="goDet">
+            <!-- <view slot="tags">共1件商品</view> -->
+            <view slot="footer">
+              <form bindsubmit="clickFormView" report-submit="true" class="form-view">
+                <button size="mini" class='pay' form-type="submit" data-id="{{item.ordernum}}" data-index='{{index}}' catchtap="goBuCha" wx:if="{{item.state=='待补差'}}">补差价￥{{item.chajia}}</button>
+                <button size="mini" class='pay' form-type="submit" data-id="{{item.ordernum}}" data-index='{{index}}' catchtap='onChange' wx:if="{{item.state=='待邮寄'}}">填写物流单号</button>
+              </form>
+            </view>
+          </van-card>
+        </view>
+        <view class="noth nocoupon" wx:if="{{!list}}">
+          <image src='../../images/none.png'></image>
+          <view>暂无待邮寄订单</view>
+        </view>
+
+
+      </van-tab>
+      <van-tab title="进行中">
+        <view class='item' wx:for="{{list}}" wx:key="index" wx:if="{{list}}">
+          <view class='num'>
+            <text class='t1'>订单编号：{{item.ordernum}}</text>
+            <text class='t2'>{{item.state}}</text>
+          </view>
+          <van-card data-id="{{item.ordernum}}" bindtap="goDet" num="{{item.orderdetail.length}}" price="{{item.actualprice}}" desc="{{item.orderdetail[0].goodsid==1 ? item.orderdetail[0].type1 : item.orderdetail[0].goodsid==2 ? item.orderdetail[0].type2 : item.orderdetail[0].type4}}"
+            title="{{item.orderdetail[0].goodsname}}" thumb="{{ item.orderdetail[0].goodsimage }}">
+
+            <view slot="footer">
+              共{{item.orderdetail.length}}件商品 合计￥{{item.actualprice}}
+              <!--<van-button size="mini" type="danger" data-id="{{item.ordernum}}" bindtap="cancel" class='cancel'>取消订单</van-button>
+                      <van-button size="mini" type="primary" class='pay'>付款</van-button>-->
+            </view>
+          </van-card>
+        </view>
+        <view class="noth nocoupon" wx:if="{{!list}}">
+          <image src='../../images/none.png'></image>
+          <view>暂无进行中订单</view>
+        </view>
+
+      </van-tab>
+      <van-tab title="待收货">
+        <view class='item' wx:for="{{list}}" wx:key="index" wx:if="{{list}}">
+          <view class='num'>
+            <text class='t1'>订单编号：{{item.ordernum}}</text>
+            <text class='t2'>{{item.state}}</text>
+          </view>
+          <van-card data-id="{{item.ordernum}}" bindtap="goDet" num="{{item.orderdetail.length}}" price="{{item.actualprice}}" desc="{{item.orderdetail[0].goodsid==1 ? item.orderdetail[0].type1 : item.orderdetail[0].goodsid==2 ? item.orderdetail[0].type2 : item.orderdetail[0].type4}}"
+            title="{{item.orderdetail[0].goodsname}}" thumb="{{ item.orderdetail[0].goodsimage }}">
+
+            <view slot="footer">
+              <form bindsubmit="clickFormView" report-submit="true" class="form-view">
+                <button size="mini" form-type="submit" data-id="{{item.ordernum}}" data-logisticsnum="{{item.logisticsnum1}}" data-logistics="{{item.logistics1}}" catchtap="goLogist" class='cancel'>查看物流</button>
+                <button size="mini" class='pay' form-type="submit" catchtap="sure" data-index="{{index}}" data-id="{{item.ordernum}}">确认收货</button>
+              </form>
+            </view>
+          </van-card>
+        </view>
+        <view class="noth nocoupon" wx:if="{{!list}}">
+          <image src='../../images/none.png'></image>
+          <view>暂无待收货订单</view>
+        </view>
+      </van-tab>
+      <!-- 待评价 -->
+      <van-tab title="待评价">
+        <view class='item' wx:for="{{list}}" wx:key="index" wx:if="{{list}}">
+          <view class='num'>
+            <text class='t1'>订单编号：{{item.ordernum}}</text>
+            <text class='t2'>{{item.state}}</text>
+          </view>
+          <van-card data-id="{{item.ordernum}}" bindtap="goDet" num="{{item.orderdetail.length}}" price="{{item.actualprice}}" desc="{{item.orderdetail[0].goodsid==1 ? item.orderdetail[0].type1 : item.orderdetail[0].goodsid==2 ? item.orderdetail[0].type2 : item.orderdetail[0].type4}}"
+            title="{{item.orderdetail[0].goodsname}}" thumb="{{ item.orderdetail[0].goodsimage }}">
+            <view slot="footer">
+              <view slot="tags" class='heji'>共1件商品 合计：￥{{item.actualprice}}</view>
+              <form bindsubmit="clickFormView" report-submit="true" class="form-view">
+                <button size="mini" class='pay comment' catchtap="goCom" form-type="submit" data-id="{{item.ordernum}}">去评价</button>
+              </form>
+            </view>
+          </van-card>
+        </view>
+
+        <view class="noth nocoupon" wx:if="{{!list}}">
+          <image src='../../images/none.png'></image>
+          <view>暂无待评价订单</view>
+        </view>
+      </van-tab>
+      <van-tab title="线下订单">
+        <view class='xianxia' wx:for="{{list1}}" wx:key="index" wx:if="{{list1}}">
+          <view class='num'>
+            <text class='t1'>订单编号：{{item.ordernum}}</text>
+            <text class='t2'>{{item.state}}</text>
+          </view>
+          <view class='addr'>
+            <view class='title'>
+              <text>{{item.shopname}}</text>
+              <text>{{item.shopphone}}</text>
+            </view>
+            <view class='cont'>{{item.shopaddress}}</view>
+          </view>
+          <view class='time'>
+            <text>时间：{{item.paytime}}</text>
+            <text>金额:￥{{item.actualprice}}</text>
+          </view>
+        </view>
+        <view class="noth nocoupon" wx:if="{{!list1}}">
+          <image src='../../images/none.png'></image>
+          <view>暂无线下订单</view>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+  <!-- </scroll-view> -->
+</view>

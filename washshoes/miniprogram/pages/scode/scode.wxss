@@ -1,0 +1,294 @@
+/* pages/scode/scose.wxss */
+
+page {
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8ff;
+}
+
+.h1, .h3, .meth {
+  background: #fff;
+  width: 100%;
+}
+
+.h1 {
+  height: 90rpx;
+}
+
+.close {
+  width: 711rpx;
+  margin: 15rpx auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100rpx;
+}
+
+.close .cha {
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.black {
+  color: rgba(0, 0, 0);
+}
+
+.t1, .coupon, .pay, .wei {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.t1 {
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+}
+
+.tot {
+  font-size: 28rpx;
+  font-weight: 400;
+}
+
+.h2 {
+  color: #9f9fa0ff;
+  text-align: center;
+}
+
+.h3 {
+  height: 176rpx;
+  /* width: 100%; */
+  margin: 16rpx auto;
+}
+
+.coupon {
+  height: 90rpx;
+  line-height: 90rpx;
+  align-items: center;
+  font-size: 28rpx;
+  font-weight: 400;
+}
+
+.t2 {
+  display: flex;
+  align-items: center;
+  color: #8ec31fff;
+}
+
+.van-icon {
+  padding: 30rpx 0 0 22rpx;
+}
+
+.pay {
+  line-height: 90rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  border-top: 1px solid #f8f8f8ff;
+}
+
+.num {
+  color: rgb(142, 195, 31);
+  font-size: 800;
+}
+
+.meth {
+  /* height: 268rpx; */
+}
+
+.title {
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  text-align: center;
+}
+
+.van-radio__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xin {
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.xin image {
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.xin text {
+  font-size: 28rpx;
+  font-weight: 400;
+  padding-left: 30rpx;
+}
+
+.tips {
+  height: 72rpx;
+  color: #505050ff;
+  font-size: 24rpx;
+  font-weight: 400;
+  width: 90%;
+  margin: 0 auto;
+  line-height: 72rpx;
+  vertical-align: middle;
+}
+
+.tips image {
+  display: inline-block;
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.btn {
+  width: 562rpx;
+  height: 88rpx;
+  margin: 70rpx auto;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.van-button, van-button {
+  width: 100%;
+}
+
+.info {
+  width: 100%;
+}
+
+.cou {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* pages/usecou/usecou.wxss */
+
+/* pages/coupons/coupons.wxss */
+
+.itm {
+  box-sizing: border-box;
+  width: 711rpx;
+  margin: 15rpx auto;
+  height: 206rpx;
+  background: #8ec31f;
+  box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.33);
+  border-radius: 15rpx;
+  padding: 12rpx 0 17rpx 76rpx;
+  color: #fff;
+}
+
+.infos {
+  width: 418rpx;
+  height: 100%;
+  float: left;
+  border-right: 1px dashed rgb(59, 89, 72);
+}
+
+.big {
+  font-size: 80rpx;
+  /* font-size: 40rpx; */
+  font-weight: 500;
+  height: 100%;
+  width: 94rpx;
+  display: flex;
+  align-items: center;
+  float: left;
+  /* padding-top: 20rpx; */
+}
+
+.top {
+  height: 114rpx;
+  /* overflow: hidden; */
+}
+
+.ico {
+  float: left;
+  /* padding-top: 20rpx; */
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.rt {
+  float: left;
+  height: 100%;
+  width: 200rpx;
+  /* padding: 20rpx 0 0 10rpx;
+  box-sizing: border-box; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.rt .view {
+  font-size: 46rpx;
+  /* font-size: 23rpx;  */
+  font-weight: 500;
+}
+
+.rt .text {
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.bottom {
+  font-size: 20rpx;
+  font-weight: 500;
+  height: 84rpx;
+  color: rgba(255, 255, 255, 1);
+  line-height: 84rpx;
+  /* padding-left: 12rpx; */
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tap {
+  float: left;
+  padding: 48rpx 44rpx 57rpx 70rpx;
+  width: 76rpx;
+  font-size: 36rpx;
+}
+
+.coupon {
+  color: #8ec31f;
+}
+
+.tap1 {
+  float: left;
+  /* padding: 48rpx 44rpx 57rpx 70rpx; */
+  width: 210rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
+}
+
+.van-popup--bottom {
+  top: 0 !important;
+  right: 0 !important;
+}

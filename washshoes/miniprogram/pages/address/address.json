@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-radio": "../../dist/radio/index",
+    "van-radio-group": "../../dist/radio-group/index",
+    "van-popup": "../../dist/popup/index",
+    "van-dialog": "../../dist/dialog/index"
+  },
+  "navigationBarTitleText": "地址管理"
+}

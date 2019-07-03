@@ -1,0 +1,116 @@
+<!--pages/orderdetail/orderdetail.wxml-->
+<view class='container'>
+  <van-popup id="popup" show="{{ show }}" z-index="999" position="bottom" overlay="{{ true }}" bind:close="onClose">
+    <view class='cou'>
+      <view class='close'>
+        <image src='../../images/quxiao@3x.png' class='cha' bindtap='close' mode='scaleToFill'></image>
+      </view>
+      <view class='h1'>
+        <view class='itm' wx:for="{{list}}" wx:key='index' data-id='{{item.mycouponid}}' wx:if="{{list}}">
+          <view class='infos'>
+            <view class='top'>
+              <view class='ico'>￥</view>
+              <view class='big'>{{item.price}}</view>
+              <view class='rt'>
+                <view class='view'>优惠券</view>
+                <view class='text'>满{{item.fullprice}}元可用</view>
+              </view>
+            </view>
+            <view class='bottom'>
+              有效日期：{{item.endtime}}
+            </view>
+          </view>
+          <view class='tap' bindtap='goBack' data-index='{{index}}'>
+            立即使用
+          </view>
+        </view>
+        <view class='noth' wx:if="{{!list}}">暂无</view>
+      </view>
+    </view>
+  </van-popup>
+  <view class='head'>
+    <view class='shop'>
+      店铺信息
+    </view>
+    <view bindtap='goChoos' wx:if="{{shop}}" class="box">
+      <view class="left">
+        <view class='adr' data-id='{{shop.shopid}}'>
+          <text>{{shop.shopname}}</text>
+          <text>{{shop.shopphone}}</text>
+        </view>
+        <view class='addr'>
+          {{shop.address}}
+        </view>
+      </view>
+      <image class="arrow" src="../../images/gengd@2x.png" />
+    </view>
+    <view wx:if="{{!shop}}" bindtap='goChoos' class='goChoos'>选择商家</view>
+    <block wx:if="{{num==0}}">
+      <view class='shop'>
+        收货人信息
+      </view>
+      <view bindtap='goAddr' class="box">
+        <view class="left">
+          <view class='adr' data-id='{{addr.addressid}}'>
+            <text>{{addr.name}}</text>
+            <text>{{addr.phone}}</text>
+          </view>
+          <view class='addr1'>
+            {{addr.address}}{{addr.addressdetail}}
+          </view>
+        </view>
+        <image class="arrow" src="../../images/gengd@2x.png" />
+      </view>
+    </block>
+  </view>
+  <view class='methold'>
+    <view class='shop'>
+      支付方式
+    </view>
+    <view class='pay'>
+      <view size='mini' class="btn {{num==0?'active':''}}" data-num="0" bindtap="menuClick">线上邮寄</view>
+      <view size='mini' class="btn {{num==1?'active':''}}" data-num="1" bindtap="menuClick">自行送取</view>
+    </view>
+  </view>
+  <view class='goods'>
+    <view class='shop'>
+      商品信息
+    </view>
+    <view class='card' wx:for="{{goodslist}}" wx:key="index" data-id='{{item.goodscarid}}'>
+      <van-card num="{{item.value}}" price="{{item.goodsprice*item.value}}" desc="无痕修复，持久恒新" title="{{item.goodsname}}" thumb="{{ item.goodsimage }}">
+        thumb-mode="scaleToFill"
+      </van-card>
+    </view>
+    <!-- <view class='card' wx:if="{{type}}" wx:for="{{goodslist}}" wx:key="index" data-id='{{item.goodscarid}}'>
+      <van-card num="{{item.value}}" price="{{item.price*item.value}}" desc="无痕修复，持久恒新" title="{{item.type1}}清洗" thumb="{{'https://brush.lixinapp.com' + item.image }}">
+        thumb-mode="scaleToFill"
+      </van-card>
+    </view> -->
+    <view class='cell'>
+      <van-cell-group>
+        <van-cell title="会员尊享" wx:if="{{userinfo.usertype!=0}}">
+          <van-checkbox value="{{ checked }}" bind:change="onChange" checked-color="#8EC31F"></van-checkbox>
+        </van-cell>
+
+        <block wx:if="{{num==0}}">
+          <van-cell title="运费" value="{{yunfei}}元" />
+        </block>
+        <van-cell title="优惠券" value="{{value}}" is-link bindtap="coupons" />
+
+
+      </van-cell-group>
+      <view>
+        <view class='comment'>买家留言</view>
+        <input class='pal' bindblur="bindblur" disabled="{{disabled}}" placeholder="如有需要请留言"></input>
+      </view>
+    </view>
+
+  </view>
+  <view class='info'>
+    <!-- <van-submit-bar price="{{ total }}" button-text="提交订单" bind:submit="onSubmit" data-total="{{total}}" label="总价：" /> -->
+    <view class="total">总价：￥{{total}}</view>
+    <form bindsubmit="clickFormView" report-submit="true" class="form-view">
+      <button type='primary' class="sub" form-type="submit" catchtap="onSubmit">提交订单</button>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/logistics/logistics.wxml-->
+<view class='containe'>
+    <view class='top'>
+        <view class='pic'>
+            <image src='../../images/tu2x.png'></image>
+            <text class='t1'>共1件商品</text>
+        </view>
+        <view class='art'>
+            <view>物流状态：运输中</view>
+            <view>{{company}}</view>
+            <view>订单编号：{{ordernum}}</view>
+        </view>
+    </view>
+    <view class='bottom'>
+        <van-steps
+          steps="{{ steps }}"
+          active="{{ active }}"
+          direction="vertical"
+          active-color="#f44"
+        />
+    </view>
+</view>

@@ -1,0 +1,75 @@
+/* pages/usecou/usecou.wxss *//* pages/coupons/coupons.wxss */
+.itm{
+  box-sizing: border-box;
+  width: 711rpx;
+  margin: 15rpx auto;
+  height: 206rpx;
+  background: #8EC31F;
+  box-shadow:0px 0px 11px 0px rgba(0, 0, 0, 0.33);
+  border-radius: 15rpx;
+  
+  padding: 12rpx 0 17rpx 76rpx;
+  color: #fff;
+}
+.info{
+  width: 418rpx;
+  height: 100%;
+  float: left;
+  border-right: 1px dashed rgb(59,89,72);
+}
+.big{
+  font-size: 80rpx;
+  /* font-size: 40rpx; */
+  font-weight: 500;
+  float: left;
+  padding-top: 20rpx;
+}
+.top{
+  height: 114rpx;
+  overflow: hidden;
+}
+.ico{
+  float: left;
+  padding-top: 20rpx;
+}
+.rt{
+  float: left;
+  padding: 24rpx 0 0 10rpx;
+}
+.rt .view{
+  font-size: 46rpx;
+  /* font-size: 23rpx;  */
+  font-weight: 500;
+}
+.rt .text{
+  font-size: 24rpx;
+  font-weight: 500;
+}
+.bottom{
+  font-size:20rpx;
+  font-weight:500;
+  height: 84rpx;
+  color:rgba(255,255,255,1);
+  line-height:84rpx;
+  padding-left: 12rpx;
+}
+.tap{
+  float: left;
+  padding: 48rpx 44rpx 57rpx 70rpx;
+  width:76rpx;
+
+  font-size: 36rpx;
+}
+.guoqi{
+  background: #9F9F9FFF;
+}
+.tap1{
+  float: left;
+  /* padding: 48rpx 44rpx 57rpx 70rpx; */
+  width:210rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
+}

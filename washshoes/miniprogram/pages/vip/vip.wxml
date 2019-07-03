@@ -1,0 +1,71 @@
+<!--pages/vip/vip.style='background:url(../../images/huid@3x.png) no-repeat left top;background-size:100%;'wxml-->
+<view class='container'>
+  <!--背景图不显示-->
+  <view class='bg'>
+    <image mode="scaleToFill" src="../../images/top.png"></image>
+  </view>
+  <view class='card'>
+    <image class='bgcard' mode="scaleToFill" src="{{bg}}"></image>
+    <view class='tit'></view>
+    <view class='cont'>
+      <view class='lt'>
+        <view class='t1'>{{obj.balance}}</view>
+        <view>可用余额</view>
+      </view>
+      <view class='rt' bindtap="goInteg">
+        积分中心
+        <van-icon name="arrow" color='#fff' />
+      </view>
+    </view>
+    <view class='btn'>
+      <form bindsubmit="clickFormView" report-submit="true" class="form-view">
+        <button class='green' form-type="submit" bindtap="goOpn" data-list='{{list}}' wx:if="{{obj.usertype==0}}">立即开通</button>
+        <button class='green' form-type="submit" bindtap="goOpn" data-list='{{list}}' wx:if="{{obj.usertype!=0}}">立即升级</button>
+      </form>
+    </view>
+  </view>
+  <!-- <view class='card' style="background:url({{obj.usertypeimage}}) no-repeat center;background-size:100%;">
+    <view class='tit'>{{usertype}}</view>
+    <view class='cont'>
+      <view class='lt'>
+        <view class='t1'>{{obj.balance}}</view>
+        <view>可用余额</view>
+      </view>
+      <view class='rt' bindtap="goInteg">
+        积分中心
+        <van-icon name="arrow" color='#fff' />
+      </view>
+    </view>
+  </view>
+  <view class='btn'>
+    <form bindsubmit="clickFormView" report-submit="true" class="form-view">
+      <button class='green' form-type="submit" bindtap="goOpn" data-list='{{list}}' wx:if="{{obj.usertype==0}}">立即开通</button>
+      <button class='green' form-type="submit" bindtap="goOpn" data-list='{{list}}' wx:if="{{obj.usertype!=0}}">立即升级</button>
+    </form>
+  </view> -->
+  <view class='tips'>
+    <view class='tips_list'>
+      <image mode="scaleToFill" src="../../images/list1.png"></image>
+      <text style="font-size:28rpx;color:#333;margin-top:10rpx;">会员专属折扣</text>
+      <text style="font-size:24rpx;color:#999;margin-top:8rpx;">服务和周边均享受折扣</text>
+    </view>
+    <view class='tips_list'>
+      <image mode="scaleToFill" src="../../images/list2.png"></image>
+      <text style="font-size:28rpx;color:#333;margin-top:10rpx;">会员线下快速消费</text>
+      <text style="font-size:24rpx;color:#999;margin-top:8rpx;">无需等待快速消费</text>
+    </view>
+    <view class='tips_list'>
+      <image mode="scaleToFill" src="../../images/list3.png"></image>
+      <text style="font-size:28rpx;color:#333;margin-top:10rpx;">会员福利</text>
+      <text style="font-size:24rpx;color:#999;margin-top:8rpx;">定期免费礼品赠送</text>
+    </view>
+    <!-- <view class='tip'>
+      <!-- <text class='t2'>特权1</text> 
+      <text class='t3'>专享折扣优惠</text>
+    </view> -->
+    <!-- <view class='content'>
+      <import src="../../wxParse/wxParse.wxml" />
+      <template is="wxParse" data="{{wxParseData:nodes.nodes}}" />
+    </view> -->
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/upload/upload.wxml-->
+<view class='container'>
+  <view class='pics'>
+    <view class='pic' wx:for="{{arr1}}" wx:key="">
+      <image class='tu' src="{{arr1[index][0]}}" bindtap='upload' data-id='{{index}}'></image>
+      <text class='desc'>{{arr1[index][1]}}</text>
+      <image class='cha' src='../../images/quxiao@3x.png' bindtap='del' data-index='{{index}}' wx:if="{{arr1[index][2]}}"></image>
+    </view>
+  </view>
+  <view class='notice'>
+    <image src='../../images/gantan@2x.png'></image>
+    <text>请您提供以下位置的图片以供工作人员为您提供清洗方案！</text>
+  </view>
+  <view class='btn'>
+    <van-button type="primary" size='large' bindtap="save">保存</van-button>
+  </view>
+</view>

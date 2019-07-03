@@ -1,0 +1,9 @@
+<!--pages/hdetail/hdetail.wxml-->
+<view class='container'>
+
+  <view class='h1'>{{list.title}}</view>
+  <view class='h2'>
+    <import src="../../wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:nodes.nodes}}" />
+  </view>
+</view>

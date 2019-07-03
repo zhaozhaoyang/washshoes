@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-cell": "../../dist/cell/index",
+    "van-cell-group": "../../dist/cell-group/index",
+    "van-tag":"../../dist/tag/index"
+  },
+  "navigationBarTitleText": "积分中心"
+}

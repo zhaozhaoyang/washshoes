@@ -1,0 +1,263 @@
+/* pages/person/person.wxss */
+page,.container{
+  height: 100%;
+}
+.container{
+  background: #f8f8f8;
+}
+.user_wrap {
+  width: 100%;
+  height: 318rpx;
+  /* background: #8ec01f; */
+  position: relative;
+  /* background: #fff; */
+}
+
+.user {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid #000; */
+}
+
+.userIfo {
+  display: flex;
+  justify-content: space-around;
+  /* background: #f6f6f6; */
+  height: 100%;
+  align-items: center;
+}
+
+.ava {
+  display: block;
+  width: 124rpx;
+  height: 124rpx;
+  border-radius: 50%;
+  /* border:1px solid #000; */
+  border: 2px solid #fff;
+  z-index: 10;
+}
+.ewm{
+  width: 95%;
+  margin: 20rpx auto;
+  height: 140rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.ma {
+  /* padding-top: 225rpx; */
+  height: 100%;
+  width: 48%;
+  /* border: 1px solid #8EC31FFF; */
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+.ma_top{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 10rpx;
+}
+.ma_xia{
+  font-size: 11px;
+  color: #999999;
+  margin-top: 10rpx;
+}
+
+.ma image {
+  display: inline-block;
+  width: 48rpx;
+  height: 48rpx;
+  /* border: 1px solid #f8f8ff; */
+  margin-right: 20rpx;
+}
+
+.t1 {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #fff;
+  height: 62rpx;
+  line-height: 62rpx;
+}
+
+.t2 {
+  height: 31rpx;
+  line-height: 31rpx;
+  padding: 0;
+  font-size: 16rpx;
+  text-indent: 10rpx;
+}
+
+.h2 {
+  width: 127rpx;
+  height: 31rpx;
+  line-height: 31rpx;
+  font-size: 18rpx;
+  font-weight: 500;
+  color: #fefefeff;
+  /* line-height: 1; */
+  background: #1fc02c;
+  border: 1px solid #f8f8ff;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+  padding-left: 26rpx;
+  display: flex;
+  justify-content: space-between;
+  /* z-index: 999; */
+  position: relative;
+  /* align-items: center; */
+}
+
+.van-icon-arrow {
+  margin-top: 5rpx;
+  height: 31rpx;
+  box-sizing: border-box;
+}
+
+.tou {
+  width: 177rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.od{
+  width: 95%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+}
+.order {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72rpx;
+  /* border-bottom:1px solid #E8E8E8; */
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+}
+
+.state {
+  height: 120rpx;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.itm {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.itm image {
+  display: inline-block;
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.itm text {
+  font-size: 28rpx;
+  margin-top: 16rpx;
+}
+
+.items {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 30rpx;
+  background: #fff;
+  border-radius: 10px;
+  padding: 16rpx;
+}
+
+.item {
+  width: 30%;
+  height: 140rpx;
+  /* border-bottom: 1px solid #f8f8ff; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.lt{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.lt image {
+  width: 42rpx;
+  height: 42rpx;
+  /* height: auto; */
+}
+
+.lt {
+  font-size: 28rpx;
+}
+
+.rt {
+  color: #8ec01f;
+}
+
+.con {
+  width: 560rpx;
+  height: 266rpx;
+  overflow: hidden;
+}
+
+.con view {
+  height: 88rpx;
+  border-bottom: 1px solid #f8f8ff;
+  text-align: center;
+  line-height: 88rpx;
+}
+
+.bg {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.usertype {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+button {
+  font-size: 28rpx !important;
+  height: 140rpx !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button>text {
+  display: inline-block;
+  height: 38rpx;
+  line-height: 38rpx;
+}

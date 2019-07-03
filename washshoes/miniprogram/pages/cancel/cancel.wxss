@@ -1,0 +1,18 @@
+/* pages/cancel/cancel.wxss */
+page{
+  height: 100%;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8;
+}
+.radio{
+  width: 100%;
+}
+.btn{
+  width: 562rpx;
+  height: 88rpx;
+  margin: 200rpx auto;
+
+}

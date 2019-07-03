@@ -1,0 +1,79 @@
+<!--pages/coupons/coupons.wxml-->
+<view class='contianer'>
+  <view class='h1'>
+    <van-tabs bind:disabled="onClickDisabled" :color="#8EC31F">
+      <van-tab title="未使用">
+        <view class='itm' wx:for="{{list}}" wx:key='index' data-id='{{item.mycouponid}}' wx:if="{{list}}">
+          <view class='info'>
+            <view class='top'>
+              <view class='ico'>￥</view>
+              <view class='big'>{{item.price}}</view>
+              <view class='rt'>
+                <view class='view'>优惠券</view>
+                <view class='text'>满{{item.fullprice}}元可用</view>
+              </view>
+            </view>
+            <view class='bottom'>
+              有效日期：{{item.endtime}}
+            </view>
+          </view>
+          <view class='tap' bindtap='goIndex'>
+            立即使用
+          </view>
+        </view>
+        <view wx:if="{{!list}}" class='noth nocoupon'>
+          <image src='../../images/coupon.png'></image>
+          <view>暂无优惠券</view>
+        </view>
+      </van-tab>
+      <van-tab title="已使用">
+        <view class='itm guoqi' wx:for="{{list1}}" wx:key='index' wx:if="{{list1}}">
+          <view class='info'>
+            <view class='top'>
+              <view class='ico'>￥</view>
+              <view class='big'>{{item.price}}</view>
+              <view class='rt'>
+                <view class='view'>优惠券</view>
+                <view class='text'>满{{item.fullprice}}元可用</view>
+              </view>
+            </view>
+            <view class='bottom'>
+              有效日期：{{item.endtime}}
+            </view>
+          </view>
+          <view class='tap1'>
+            已使用
+          </view>
+        </view>
+        <view wx:if="{{!list1}}" class='noth nocoupon'>
+          <image src='../../images/coupon.png'></image>
+          <view>暂无优惠券</view>
+        </view>
+      </van-tab>
+      <van-tab title="已过期">
+        <view class='itm guoqi' wx:for="{{list2}}" wx:key='index' wx:if="{{list3}}">
+          <view class='info'>
+            <view class='top'>
+              <view class='ico'>￥</view>
+              <view class='big'>{{item.price}}</view>
+              <view class='rt'>
+                <view class='view'>优惠券</view>
+                <view class='text'>满{{item.fullprice}}元可用</view>
+              </view>
+            </view>
+            <view class='bottom'>
+              有效日期：{{item.endtime}}
+            </view>
+          </view>
+          <view class='tap1'>
+            已过期
+          </view>
+        </view>
+        <view wx:if="{{!list3}}" class='noth nocoupon'>
+          <image src='../../images/coupon.png'></image>
+          <view>暂无优惠券</view>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

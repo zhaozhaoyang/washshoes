@@ -1,0 +1,21 @@
+<view class="container" >
+    <view class='cm' wx:if="{{list}}" wx:for="{{list}}" data-id="{{item.commentid}}" wx:key="index">
+        <view class='ch1' >
+            <image src='{{item.usericon}}'></image>
+            <text>{{item.username}}</text>
+        </view>
+        <view class='ch2'>
+            <text >{{item.time}}   {{cate}}</text>
+        </view>
+        <view class='ch3'> 
+          {{item.content}}            
+        </view>
+        <view class='ch4' wx:if="{{item.images.length}}">
+            <image src='{{itm}}' wx:for='{{item.images}}' wx:for-item="itm" wx:for-index='idx' wx:key='idx' data-j="{{index}}" data-index="{{idx}}" bindtap="preview"></image>
+        </view>
+    </view>
+    <view wx:if="{{!list}}">暂无评论</view>
+
+
+</view>
+  

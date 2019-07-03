@@ -1,0 +1,20 @@
+<!--pages/setting/setting.wxml-->
+<view class='container'>
+    <view class='cell'>
+        <van-cell
+          wx:for="{{list}}"
+          title="{{item}}"
+          wx:key="index"
+          id="{{index}}"
+          is-link
+          bindtap="goHel"
+        />
+    </view>
+    <view class='bottom'>
+      <image mode="scaleToFill" src="../../images/phone.png" bindtap="goCall"></image>
+      <view class='phone'>
+        <view class='question'>咨询时间：每天的10:30到20:00</view>
+        <view class='tel'>咨询电话：352654865</view>
+      </view>
+    </view>
+</view>
